@@ -30,16 +30,13 @@ export class CloudflareWorkersKVStore extends Store {
     }
 
     get(sid: string, callback: (err: any, session?: session.SessionData | null) => void): void {
-        console.trace("get", sid);
         this.kvStorage
             .get(sid)
             .then((session) => {
-                console.log("get? session", session);
                 if (!session) {
                     return callback(null, null);
                 }
                 try {
-                    console.log("get session", session);
                     const sessionData = JSON.parse(session);
                     callback(null, sessionData);
                 } catch (error) {
@@ -53,7 +50,6 @@ export class CloudflareWorkersKVStore extends Store {
     }
 
     set(sid: string, session: session.SessionData, callback?: (err?: any) => void): void {
-        console.trace("set", sid, JSON.stringify(session));
         this.kvStorage
             .put(sid, JSON.stringify(session), {
                 expiration: this.options.expiration,
@@ -63,7 +59,6 @@ export class CloudflareWorkersKVStore extends Store {
                 callback?.();
             })
             .catch((error: any) => {
-                console.log("error", error);
                 callback?.(error);
             });
     }
