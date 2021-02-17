@@ -68,6 +68,26 @@ app.listen(8000, () => {
 });
 ```
 
+### Options
+
+```ts
+export type CreateSessionOptions = {
+    // cloudflare account id
+    accountId: string;
+    // KV storage namespace Id
+    namespace: string;
+    // cloudflare account email
+    authEmail: string;
+    // cloudflare Global API Key
+    authKey: string;
+    // https://developers.cloudflare.com/workers/runtime-apis/kv#expiring-keys
+    // Set its "expiration", using an absolute time specified in a number of seconds since the UNIX epoch
+    expiration?: number;
+    // Set its "expiration TTL" (time to live), using a relative number of seconds from the current time. For example, if you wanted a key to expire 10 minutes after creating it, you would set its expiration TTL to 600.
+    expirationTtl?: number;
+};
+```
+
 ## Changelog
 
 See [Releases page](https://github.com/azu/express-session-cloudflare-kv/releases).

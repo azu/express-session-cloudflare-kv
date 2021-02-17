@@ -65,9 +65,13 @@ export class CloudflareWorkersKVStore extends Store {
 }
 
 export type CreateSessionOptions = {
-    namespace: string;
+    // cloudflare account id
     accountId: string;
+    // KV storage namespace Id
+    namespace: string;
+    // cloudflare account email
     authEmail: string;
+    // cloudflare Global API Key
     authKey: string;
     // https://developers.cloudflare.com/workers/runtime-apis/kv#expiring-keys
     // Set its "expiration", using an absolute time specified in a number of seconds since the UNIX epoch
