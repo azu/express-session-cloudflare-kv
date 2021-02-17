@@ -2,6 +2,8 @@
 
 A cloudflare (workers) KV based [express session](https://github.com/expressjs/session) store.
 
+This session store use Cloudflare API from Node.js application.
+
 - [Cloudflare API v4 Documentation](https://api.cloudflare.com/#workers-kv-namespace-properties)
 - [KV · Cloudflare Workers docs](https://developers.cloudflare.com/workers/runtime-apis/kv)
 
