@@ -68,7 +68,7 @@ export type CreateSessionOptions = {
     // cloudflare account id
     accountId: string;
     // KV storage namespace Id
-    namespace: string;
+    namespaceId: string;
     // cloudflare account email
     authEmail: string;
     // cloudflare Global API Key
@@ -81,7 +81,7 @@ export type CreateSessionOptions = {
 };
 export const createSessionStore = (options: CreateSessionOptions) => {
     const kvStorage = new KvStorage({
-        namespace: options.namespace,
+        namespace: options.namespaceId,
         accountId: options.accountId,
         authEmail: options.authEmail,
         authKey: options.authKey,

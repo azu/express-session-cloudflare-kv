@@ -22,7 +22,7 @@ You also need to install express:
 Requirements:
 
 - accountId: cloudflare account id
-- namespace: KV storage namespace Id
+- namespaceId: KV storage namespace Id
     - https://dash.cloudflare.com/{id}/workers/overview
 - authEmail: cloudflare account email
     - https://dash.cloudflare.com/profile
@@ -39,7 +39,7 @@ app.use(session({
         // cloudflare account id
         accountId: process.env.CF_accountId,
         // cloudflare KV namespace **id** (not name)
-        namespace: process.env.CF_namespace,
+      namespaceId: process.env.CF_namespaceId,
         // cloudflare account email
         authEmail: process.env.CF_authEmail,
         // cloudflare API Key(probabely require Global Key)
@@ -75,7 +75,7 @@ export type CreateSessionOptions = {
     // cloudflare account id
     accountId: string;
     // KV storage namespace Id
-    namespace: string;
+    namespaceId: string;
     // cloudflare account email
     authEmail: string;
     // cloudflare Global API Key
