@@ -19,6 +19,16 @@ You also need to install express:
 
 ## Usage
 
+Requirements:
+
+- accountId: cloudflare account id
+- namespace: KV storage namespace Id
+    - https://dash.cloudflare.com/{id}/workers/overview
+- authEmail: cloudflare account email
+    - https://dash.cloudflare.com/profile
+- authKey: cloudflare Global API Key
+    - https://dash.cloudflare.com/profile/api-tokens
+
 ```ts
 const express = require("express");
 const session = require("express-session");
