@@ -44,7 +44,6 @@ export class CloudflareWorkersKVStore extends Store {
                 }
             })
             .catch((error: any) => {
-                console.log("error", error);
                 callback?.(error);
             });
     }

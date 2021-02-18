@@ -1,19 +1,20 @@
 var express = require("express");
 var session = require("express-session");
 var app = express();
-var { createSession } = require("./lib/express-session-cloudflare-kv");
+var { createSessionStore } = require("./lib/express-session-cloudflare-kv");
 
 const env = require("./.env.json");
 app.use(
     session({
-        store: createSession({
+        store: createSessionStore({
             accountId: env.accountId,
-            namespace: env.namespace,
+            namespaceId: env.namespaceId,
             authEmail: env.authEmail,
             authKey: env.authKey
         }),
         secret: "t5sEIUY72Ens",
-        resave: false
+        resave: false,
+        saveUninitialized: true
     })
 );
 // Access the session as req.session

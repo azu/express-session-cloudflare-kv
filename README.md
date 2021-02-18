@@ -39,7 +39,7 @@ app.use(session({
         // cloudflare account id
         accountId: process.env.CF_accountId,
         // cloudflare KV namespace **id** (not name)
-      namespaceId: process.env.CF_namespaceId,
+        namespaceId: process.env.CF_namespaceId,
         // cloudflare account email
         authEmail: process.env.CF_authEmail,
         // cloudflare API Key(probabely require Global Key)
@@ -47,6 +47,7 @@ app.use(session({
     }),
     secret: "xxx",
     resave: false,
+    saveUninitialized: true
 }));
 // Access the session as req.session
 app.get('/', function(req, res, next) {
