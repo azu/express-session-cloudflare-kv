@@ -1,6 +1,6 @@
 {
   "name": "express-session-cloudflare-kv",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A cloudflare workers KV based express session store.",
   "keywords": [
     "express",
