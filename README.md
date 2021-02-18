@@ -1,6 +1,6 @@
 # express-session-cloudflare-kv
 
-A cloudflare (workers) KV based [express session](https://github.com/expressjs/session) store.
+A cloudflare (workers) KV-based [express session](https://github.com/expressjs/session) store.
 
 This session store use Cloudflare API from Node.js application.
 
