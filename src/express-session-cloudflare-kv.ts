@@ -1,6 +1,4 @@
 import session, { Store } from "express-session";
-
-export { Store } from "express-session";
 // @ts-expect-error: no type
 import KvStorage from "cloudflare-kv-storage-rest";
 // @ts-ignore
