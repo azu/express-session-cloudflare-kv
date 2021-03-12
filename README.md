@@ -7,6 +7,9 @@ This session store use Cloudflare API from Node.js application.
 - [Cloudflare API v4 Documentation](https://api.cloudflare.com/#workers-kv-namespace-properties)
 - [KV · Cloudflare Workers docs](https://developers.cloudflare.com/workers/runtime-apis/kv)
 
+⚠️ You should not use this session store in production.
+Cloudflare Workers KV is [eventually-consistent](https://developers.cloudflare.com/workers/learning/how-kv-works). So It is not suitable for session manager.
+
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
